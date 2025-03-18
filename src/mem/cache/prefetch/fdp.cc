@@ -184,10 +184,10 @@ FetchDirectedPrefetcher::translationComplete(PrefetchRequest *pfr, bool failed)
             stats.pfInCache++;
             DPRINTF(HWPrefetch, "Drop Packet. In Cache / MSHR\n");
         } else {
-        
+
             DPRINTF(HWPrefetch, "Addr: %#x Add packet to PFQ. pkt PA:%#x, "
                     "PFQ sz:%i\n", pfr->addr, pfr->pkt->getAddr(), pfq.size());
-        
+
             stats.pfCandidatesAdded++;
             pfq.push_back(*it);
         }
